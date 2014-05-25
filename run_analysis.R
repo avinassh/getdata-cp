@@ -64,6 +64,10 @@ colnames(merged_data) <- colNamesVector
 
 # produce a tidy data set with the average of each variable for each activity and each subject. 
 finalData <- aggregate(x, by = list(activity = y$V1, subject = sbj$V1), mean)
+colNamesVector <- colnames(finalData)
+colNamesVector <- gsub("-mean()","Mean",colNamesVector,fixed=TRUE)
+colNamesVector <- gsub("-std()","Std",colNamesVector,fixed=TRUE)
+colnames(finalData) <- colNamesVector 
 write.table(finalData, 'result.txt')
 
 #by(merged_data, merged_data$subject, FUN=function(data){
