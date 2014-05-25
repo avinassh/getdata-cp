@@ -22,7 +22,7 @@ The directory structure is as follows
 Following two are major global variables:
 
  - `merged_data`
- - 'finalData`
+ - `finalData`
  
 ## merged_data
 ### Data of merged_data
